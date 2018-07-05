@@ -19,7 +19,7 @@ class En2_9 {
 	//--- 西暦y年m月d日の年内の経過日数を求める ---//
 	static int dayOfYear(int y, int m, int d) {
 		while(--m != 0)
-			d += mdays[isLeap(y)][m-1];
+			d += mdays[isLeap(y)][m];
 		return(d);
 	}
 
