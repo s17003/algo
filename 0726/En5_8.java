@@ -1,6 +1,6 @@
 // ８王妃問題を解く
 
-class EightQueen {
+class En5_8 {
 
 	static boolean[] flag_a = new boolean[8];	 // 各行に王妃が配置ずみか
 	static boolean[] flag_b = new boolean[15]; // ／対角線に王妃が配置ずみか
@@ -9,8 +9,11 @@ class EightQueen {
 
 	//--- 盤面（各列の王妃の位置）を出力 ---//
 	static void print() {
-		for (int i = 0; i < 8; i++)
-			System.out.printf("%2d", pos[i]);
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++)
+				System.out.printf("%s", j == pos[i] ? "■ " : "□ ");
+			System.out.println();
+		}
 		System.out.println();
 	}
 
