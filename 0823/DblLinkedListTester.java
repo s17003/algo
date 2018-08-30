@@ -68,6 +68,7 @@ class DblLinkedListTester {
 		NEXT(       "着目ノードを後方へ"),
 		PREV(       "着目ノードを前方へ"),
 		PRINT_CRNT( "着目ノードを表示"),
+		PURGE(      "名前が等しい値のみ削除"),
 		DUMP(       "全ノードを表示"),
 		TERMINATE(  "終了");
 
@@ -101,7 +102,7 @@ class DblLinkedListTester {
 			}
 			System.out.print("：");
 			key = stdIn.nextInt();
-		} while (key < Menu.ADD_FIRST.ordinal() || 
+		} while (key < Menu.ADD_FIRST.ordinal() ||
 											key > Menu.TERMINATE.ordinal());
 		return Menu.MenuAt(key);
 	}
@@ -184,6 +185,9 @@ class DblLinkedListTester {
 			 case CLEAR :							// 全ノードを削除
 					list.clear();
 			 		break;
+			 case PURGE :
+					list.purge(Data.NAME_ORDER);
+					break;
 			}
 		} while (menu != Menu.TERMINATE);
 	}
