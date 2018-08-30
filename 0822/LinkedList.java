@@ -152,9 +152,7 @@ public class LinkedList<E> {
 	      if (c.compare(ptr.data, ptr2.data) == 0) {
 		pre.next = ptr2.next;
 		count++;
-	      } else {
-		pre = ptr2;
-	      }
+	      } else pre = ptr2;
 	    }
 	    if (count == 0)
 	      ptr = ptr.next;

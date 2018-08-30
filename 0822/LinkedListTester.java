@@ -67,6 +67,7 @@ public class LinkedListTester {
 		NEXT(       "着目ノードを進める"),
 		PRINT_CRNT( "着目ノードを表示"),
 		DUMP(       "全ノードを表示"),
+		PURGE("先頭以外を削除する"),
 		TERMINATE(  "終了");
 
 		private final String message;				// 表示用文字列
@@ -99,7 +100,7 @@ public class LinkedListTester {
 			}
 			System.out.print("：");
 			key = stdIn.nextInt();
-		} while (key < Menu.ADD_FIRST.ordinal() || 
+		} while (key < Menu.ADD_FIRST.ordinal() ||
 											key > Menu.TERMINATE.ordinal());
 		return Menu.MenuAt(key);
 	}
@@ -114,7 +115,7 @@ public class LinkedListTester {
 
 		do {
 			switch (menu = SelectMenu()) {
-			 
+
 			 case ADD_FIRST :							// 先頭にノードを挿入
 					data = new Data();
 				 	data.scanData("先頭に挿入", Data.NO | Data.NAME);
@@ -172,6 +173,9 @@ public class LinkedListTester {
 			 case CLEAR :								// 全ノードを削除
 					list.clear();
 			 		break;
+			 case PURGE :
+					list.purge(Data.NO_ORDER);
+					break;
 			}
 		} while (menu != Menu.TERMINATE);
 	}
