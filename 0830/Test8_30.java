@@ -41,11 +41,11 @@ public class Test8_30 {
         for (int i = 0; i < N; i++) {
             String s = sc.next();
             String[] array = s.split(",");
-            String seibetu = array[3];
+            String gender = array[3];
             String pref = array[6];
             if(!rank.containsKey(pref)){
                 int[] nin = {0,0,1};
-                if(seibetu.equals("男")) nin[0]++;
+                if(gender.equals("男")) nin[0]++;
                 else nin[1]++;
 
                 rank.put(pref, nin);
@@ -53,7 +53,7 @@ public class Test8_30 {
             else{
                 int[] nin = rank.get(pref);
                 nin[2]++;
-                if(seibetu.equals("男")) nin[0]++;
+                if(gender.equals("男")) nin[0]++;
                 else nin[1]++;
 
                 rank.put(pref, nin);
