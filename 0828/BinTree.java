@@ -177,6 +177,7 @@ public class BinTree<K,V> {
 	    printReverseSubTree(node.left);
 	  }
 	}
+	//--- 全ノードをキー値の降順に表示 ---//
 	public void printReverse() {
 	  printReverseSubTree(root);
 	}
